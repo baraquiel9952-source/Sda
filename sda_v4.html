@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KhaosSDA – Auditoría Estructural y Vibraciones en CDMX y EDOMEX</title>
+    <meta name="description" content="Peritaje estructural por vibraciones en Ciudad de México y Estado de México. Detectamos daño sísmico, asentamientos y resonancia en losas con tecnología SDA. Dictamen en PDF el mismo día.">
+
+    <!-- Open Graph (WhatsApp / Facebook preview) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="KhaosSDA – Auditoría Estructural y Vibraciones">
+    <meta property="og:description" content="¿Tu inmueble sufrió daños sísmicos o asentamientos? Perito en campo con equipo Kernel SDA. CDMX y EDOMEX. Dictamen PDF el mismo día.">
+    <meta property="og:url" content="https://khaosSDA.com">
+    <meta property="og:image" content="https://khaosSDA.com/og-image.jpg">
+    <meta property="og:locale" content="es_MX">
+
+    <!-- Favicon SVG inline -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230f172a'/><text x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='16' fill='%2310b981'>S</text></svg>">
+
+    <!-- Schema.org LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "KhaosSDA – Monitoreo Dinámico Estructural",
+      "description": "Peritaje estructural por vibraciones. Auditorías preventivas con equipo Kernel SDA para detectar daño sísmico, asentamientos y resonancia en losas y muros.",
+      "telephone": "+525647385519",
+      "url": "https://khaosSDA.com",
+      "areaServed": [
+        {"@type": "State", "name": "Ciudad de México"},
+        {"@type": "State", "name": "Estado de México"}
+      ],
+      "priceRange": "$1500–$4500 MXN",
+      "openingHours": "Mo-Fr 08:00-18:00",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+525647385519",
+        "contactType": "customer service",
+        "availableLanguage": "Spanish"
+      }
+    }
+    </script>
+    <style>
+        :root {
+            --primary: #0f172a;
+            --accent: #10b981;
+            --accent-hover: #059669;
+            --text-dark: #1e293b;
+            --text-light: #f8fafc;
+            --bg-gray: #f1f5f9;
+            --border: #e2e8f0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { color: var(--text-dark); background-color: #ffffff; line-height: 1.6; }
+
+        /* Header */
+        header {
+            background-color: var(--primary);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: box-shadow 0.3s;
+        }
+        header.scrolled { box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
+        .logo { color: var(--text-light); font-size: 1.5rem; font-weight: bold; letter-spacing: 1px; }
+        .logo span { color: var(--accent); }
+        .nav-links { display: flex; align-items: center; }
+        .nav-links a { color: var(--text-light); text-decoration: none; margin-left: 1.5rem; font-size: 0.95rem; transition: color 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+        .hamburger span { display: block; width: 25px; height: 2px; background: var(--text-light); transition: all 0.3s; }
+        .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+        @media (max-width: 700px) {
+            .hamburger { display: flex; }
+            .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--primary); flex-direction: column; padding: 1.5rem 2rem; gap: 1rem; border-top: 1px solid #1e293b; }
+            .nav-links.open { display: flex; }
+            .nav-links a { margin-left: 0; font-size: 1.1rem; }
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: var(--text-light);
+            padding: 5rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(16,185,129,0.08) 0%, transparent 70%);
+            top: -100px; right: -100px;
+            pointer-events: none;
+        }
+        .hero-container { max-width: 900px; margin: 0 auto; position: relative; }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(16,185,129,0.15);
+            border: 1px solid rgba(16,185,129,0.4);
+            color: var(--accent);
+            font-size: 0.8rem; font-weight: 600; letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 0.35rem 1rem; border-radius: 50px; margin-bottom: 1.5rem;
+        }
+        .hero h1 { font-size: 2.8rem; margin-bottom: 1.5rem; line-height: 1.2; }
+        .hero p { font-size: 1.2rem; color: #94a3b8; margin-bottom: 2.5rem; max-width: 700px; margin-left: auto; margin-right: auto; }
+
+        /* Hero stats */
+        .hero-stats { display: flex; justify-content: center; gap: 3rem; margin-top: 3rem; flex-wrap: wrap; }
+        .stat-item { text-align: center; }
+        .stat-number { font-size: 2.2rem; font-weight: 800; color: var(--accent); display: block; line-height: 1; }
+        .stat-label { font-size: 0.8rem; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-top: 0.3rem; }
+
+        /* BTN */
+        .btn {
+            background-color: var(--accent);
+            color: var(--text-light);
+            padding: 0.8rem 2rem; border: none; border-radius: 5px;
+            font-size: 1.1rem; font-weight: bold; cursor: pointer;
+            text-decoration: none; transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+            display: inline-block;
+        }
+        .btn:hover { background-color: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(16,185,129,0.3); }
+
+        /* Pain Points */
+        .pain-points { padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; text-align: center; }
+        .pain-points h2 { font-size: 2rem; margin-bottom: 3rem; color: var(--primary); }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .pain-card { background: var(--bg-gray); padding: 2.5rem 1.5rem; border-radius: 8px; border-left: 5px solid #ef4444; text-align: left; transition: transform 0.3s, box-shadow 0.3s; }
+        .pain-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.08); }
+        .pain-card h3 { margin-bottom: 1rem; color: var(--primary); }
+
+        /* Services */
+        .services { background-color: var(--bg-gray); padding: 5rem 2rem; }
+        .services-container { max-width: 1200px; margin: 0 auto; }
+        .services h2 { text-align: center; font-size: 2rem; margin-bottom: 3rem; color: var(--primary); }
+        .grid-3-services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 2rem;
+        }
+        @media (max-width: 750px) {
+            .grid-3-services { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1rem; }
+        }
+        .service-card {
+            background: #ffffff; padding: 2.5rem 2rem; border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--accent);
+            display: flex; flex-direction: column; justify-content: space-between;
+            transition: box-shadow 0.3s, transform 0.3s;
+            position: relative;
+        }
+        .service-card:hover { box-shadow: 0 16px 40px rgba(0,0,0,0.1); transform: translateY(-4px); }
+        .service-card h3 { font-size: 1.4rem; margin-bottom: 0.75rem; color: var(--primary); }
+        .price { font-size: 2rem; font-weight: bold; color: var(--primary); margin: 1.2rem 0; }
+        .price span { font-size: 1rem; color: #64748b; font-weight: normal; }
+        .features-list { list-style: none; margin-bottom: 2rem; }
+        .features-list li { margin-bottom: 0.75rem; position: relative; padding-left: 1.5rem; font-size: 0.95rem; }
+        .features-list li::before { content: "✓"; color: var(--accent); font-weight: bold; position: absolute; left: 0; }
+
+        /* MEJORA NUEVA 1: badge "Más popular" */
+        .badge-popular {
+            position: absolute;
+            top: -1px; right: 1.5rem;
+            background: var(--accent);
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0 0 6px 6px;
+        }
+
+        /* Justificación de precio */
+        .price-justification {
+            background: rgba(16,185,129,0.07);
+            border-left: 3px solid var(--accent);
+            border-radius: 4px;
+            padding: 0.75rem 1rem;
+            margin-bottom: 1.2rem;
+            font-size: 0.85rem;
+            color: #374151;
+            line-height: 1.6;
+        }
+        .price-justification strong { color: var(--accent); }
+
+        /* Tecnología */
+        .features-tech { padding: 5rem 2rem; max-width: 1000px; margin: 0 auto; }
+        .features-tech h2 { text-align: center; margin-bottom: 3rem; font-size: 2rem; }
+        .tech-steps-wrapper { position: relative; }
+        .tech-steps-wrapper::before {
+            content: ''; position: absolute; left: 20px; top: 20px; bottom: 20px;
+            width: 2px; background: linear-gradient(to bottom, var(--accent), #3b82f6); opacity: 0.25;
+        }
+        .tech-step { display: flex; margin-bottom: 2.5rem; align-items: flex-start; position: relative; }
+        .tech-number {
+            background-color: var(--primary); color: var(--text-light);
+            width: 40px; height: 40px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: bold; margin-right: 1.5rem; flex-shrink: 0;
+            border: 2px solid var(--accent);
+        }
+        .tech-info h4 { font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--primary); }
+
+        /* Testimonios */
+        .testimonials { background: var(--primary); padding: 5rem 2rem; color: var(--text-light); }
+        .testimonials-container { max-width: 1100px; margin: 0 auto; text-align: center; }
+        .testimonials h2 { font-size: 2rem; margin-bottom: 3rem; color: var(--text-light); }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .testimonial-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 2rem; text-align: left; }
+        .testimonial-stars { color: #f59e0b; font-size: 1.1rem; margin-bottom: 1rem; letter-spacing: 2px; }
+        .testimonial-text { color: #cbd5e1; font-style: italic; margin-bottom: 1.5rem; line-height: 1.7; }
+        .testimonial-author { font-weight: 700; color: var(--text-light); font-size: 0.9rem; }
+        .testimonial-role { color: var(--accent); font-size: 0.8rem; margin-top: 0.2rem; }
+
+        /* FAQ */
+        .faq-section { padding: 5rem 2rem; max-width: 800px; margin: 0 auto; }
+        .faq-section h2 { text-align: center; font-size: 2rem; margin-bottom: 3rem; color: var(--primary); }
+        .faq-item { border-bottom: 1px solid var(--border); }
+        .faq-question {
+            width: 100%; background: none; border: none;
+            padding: 1.25rem 0; text-align: left;
+            font-size: 1rem; font-weight: 600; color: var(--primary);
+            cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+            transition: color 0.3s;
+        }
+        .faq-question:hover { color: var(--accent); }
+        .faq-icon { font-size: 1.5rem; font-weight: 300; color: var(--accent); flex-shrink: 0; transition: transform 0.3s; line-height: 1; }
+        .faq-item.open .faq-icon { transform: rotate(45deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s; color: #475569; line-height: 1.7; }
+        .faq-item.open .faq-answer { max-height: 300px; padding-bottom: 1.25rem; }
+
+        /* MEJORA NUEVA 2: Sección "¿Cómo elegir?" comparativa */
+        .compare-section {
+            background: var(--bg-gray);
+            padding: 4rem 2rem;
+        }
+        .compare-section h2 { text-align: center; font-size: 2rem; margin-bottom: 0.75rem; color: var(--primary); }
+        .compare-subtitle { text-align: center; color: #64748b; margin-bottom: 2.5rem; font-size: 0.95rem; }
+        .compare-table-wrap { max-width: 820px; margin: 0 auto; overflow-x: auto; }
+        table.compare { width: 100%; border-collapse: collapse; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+        table.compare th { background: var(--primary); color: var(--text-light); padding: 1rem 1.25rem; font-size: 0.9rem; text-align: center; }
+        table.compare th:first-child { text-align: left; }
+        table.compare td { padding: 0.85rem 1.25rem; border-bottom: 1px solid #f1f5f9; font-size: 0.9rem; text-align: center; color: #374151; }
+        table.compare td:first-child { text-align: left; font-weight: 500; color: var(--primary); }
+        table.compare tr:last-child td { border-bottom: none; }
+        table.compare tr:hover td { background: #f8fafc; }
+        .chk { color: var(--accent); font-weight: bold; font-size: 1.1rem; }
+        .nochk { color: #cbd5e1; font-size: 1.1rem; }
+        .compare-col-highlight { background: rgba(16,185,129,0.04); }
+
+        /* CTA */
+        .cta-final { background-color: var(--primary); color: var(--text-light); text-align: center; padding: 5rem 2rem; }
+        .cta-final h2 { font-size: 2.2rem; margin-bottom: 1rem; }
+        .cta-final p { color: #94a3b8; margin-bottom: 2.5rem; }
+
+        /* MEJORA NUEVA 3: CTA secundario con teléfono visible */
+        .cta-phone-block {
+            margin-top: 1.5rem;
+            display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
+        }
+        .cta-phone-label { font-size: 0.8rem; color: #64748b; letter-spacing: 1px; text-transform: uppercase; }
+        .cta-phone-number {
+            font-size: 1.8rem; font-weight: 800; color: var(--accent);
+            letter-spacing: 2px; text-decoration: none;
+        }
+        .cta-phone-number:hover { text-decoration: underline; }
+
+        /* Footer */
+        footer { background-color: #0b111e; color: #64748b; text-align: center; padding: 2rem; font-size: 0.85rem; border-top: 1px solid #1e293b; }
+
+        /* WhatsApp flotante */
+        .whatsapp-float {
+            position: fixed; bottom: 24px; right: 24px;
+            width: 56px; height: 56px;
+            background: #25d366; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+            z-index: 9999; text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: pulse-wa 2.5s infinite;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,0.7); animation: none; }
+        .whatsapp-float svg { width: 28px; height: 28px; fill: #fff; }
+        @keyframes pulse-wa { 0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.5)}50%{box-shadow:0 4px 36px rgba(37,211,102,.8)} }
+
+        /* ── Zona de cobertura ── */
+        .coverage-section { padding: 4rem 2rem; max-width: 1100px; margin: 0 auto; text-align: center; }
+        .coverage-section h2 { font-size: 2rem; margin-bottom: 0.5rem; color: var(--primary); }
+        .coverage-subtitle { color: #64748b; margin-bottom: 2.5rem; font-size: 0.95rem; }
+        .coverage-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+        .coverage-card {
+            background: var(--bg-gray); border-radius: 10px; padding: 1.8rem 1.5rem;
+            border-top: 4px solid var(--accent); text-align: left;
+        }
+        .coverage-card h3 { font-size: 1.1rem; color: var(--primary); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
+        .coverage-card h3 span.icon { font-size: 1.3rem; }
+        .coverage-tag-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .coverage-tag {
+            background: #fff; border: 1px solid var(--border); color: var(--text-dark);
+            font-size: 0.78rem; padding: 0.3rem 0.65rem; border-radius: 50px;
+        }
+        .coverage-note { font-size: 0.85rem; color: #64748b; margin-top: 1rem; }
+
+        /* ── Garantía no-resultado ── */
+        .guarantee-banner {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a2f 100%);
+            color: var(--text-light); padding: 3rem 2rem; text-align: center;
+        }
+        .guarantee-banner h2 { font-size: 1.8rem; margin-bottom: 0.75rem; }
+        .guarantee-banner p { color: #94a3b8; max-width: 680px; margin: 0 auto 1.5rem; line-height: 1.7; }
+        .guarantee-pills { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; }
+        .guarantee-pill {
+            background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.35);
+            color: var(--accent); font-size: 0.85rem; font-weight: 600;
+            padding: 0.45rem 1.1rem; border-radius: 50px;
+        }
+
+        /* ── Formas de pago ── */
+        .payment-section { padding: 2.5rem 2rem; max-width: 900px; margin: 0 auto; text-align: center; }
+        .payment-section h3 { font-size: 1.2rem; color: var(--primary); margin-bottom: 1.25rem; }
+        .payment-methods { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.75rem; }
+        .payment-chip {
+            display: flex; align-items: center; gap: 0.45rem;
+            background: var(--bg-gray); border: 1px solid var(--border);
+            border-radius: 8px; padding: 0.55rem 1rem;
+            font-size: 0.88rem; font-weight: 600; color: var(--text-dark);
+        }
+        .payment-chip .chip-icon { font-size: 1.15rem; }
+
+        /* ── Botón volver arriba ── */
+        #back-to-top {
+            position: fixed; bottom: 90px; right: 24px;
+            width: 44px; height: 44px; border-radius: 50%;
+            background: var(--primary); border: 2px solid var(--accent);
+            color: var(--accent); font-size: 1.2rem;
+            display: none; align-items: center; justify-content: center;
+            cursor: pointer; z-index: 9998;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+            transition: opacity 0.3s, transform 0.3s;
+            text-decoration: none;
+        }
+        #back-to-top.show { display: flex; }
+        #back-to-top:hover { transform: translateY(-3px); background: #1e293b; }
+
+        /* ── WhatsApp tooltip de tiempo de respuesta ── */
+        .wa-response-badge {
+            position: fixed; bottom: 88px; right: 88px;
+            background: var(--primary); color: var(--text-light);
+            font-size: 0.72rem; line-height: 1.4;
+            padding: 0.45rem 0.8rem; border-radius: 8px;
+            max-width: 170px; text-align: center;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+            z-index: 9997; pointer-events: none;
+            opacity: 0; transition: opacity 0.3s;
+        }
+        .wa-response-badge::after {
+            content: ''; position: absolute; right: -7px; top: 50%; transform: translateY(-50%);
+            border: 6px solid transparent; border-left-color: var(--primary);
+        }
+        .whatsapp-float:hover ~ .wa-response-badge,
+        .wa-response-badge:hover { opacity: 1; }
+
+        /* Fade-in */
+        .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .fade-in-delay-1 { transition-delay: 0.1s; }
+        .fade-in-delay-2 { transition-delay: 0.2s; }
+        .fade-in-delay-3 { transition-delay: 0.3s; }
+
+        /* MEJORA NUEVA 4: Barra de progreso al hacer scroll */
+        #scroll-progress {
+            position: fixed; top: 0; left: 0; height: 3px;
+            background: var(--accent); width: 0%; z-index: 9999;
+            transition: width 0.1s linear;
+        }
+
+        /* MEJORA NUEVA 5: Tooltip en precios */
+        .tooltip-wrap { position: relative; display: inline-block; }
+        .tooltip-icon {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 17px; height: 17px;
+            background: #e2e8f0; border-radius: 50%;
+            font-size: 0.7rem; font-weight: 700; color: #64748b;
+            cursor: help; margin-left: 6px; vertical-align: middle;
+        }
+        .tooltip-box {
+            display: none;
+            position: absolute; bottom: 125%; left: 50%; transform: translateX(-50%);
+            background: var(--primary); color: var(--text-light);
+            font-size: 0.78rem; line-height: 1.5;
+            padding: 0.6rem 0.9rem; border-radius: 6px;
+            width: 220px; text-align: left;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+            z-index: 10; pointer-events: none;
+        }
+        .tooltip-box::after {
+            content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+            border: 6px solid transparent; border-top-color: var(--primary);
+        }
+        .tooltip-wrap:hover .tooltip-box { display: block; }
+    </style>
+</head>
+<body>
+
+    <!-- MEJORA NUEVA 4: Barra de scroll -->
+    <div id="scroll-progress"></div>
+
+    <header id="main-header">
+        <div class="logo">Khaos<span>SDA</span></div>
+        <div class="hamburger" id="hamburger" aria-label="Abrir menú" role="button" tabindex="0">
+            <span></span><span></span><span></span>
+        </div>
+        <nav class="nav-links" id="nav-links">
+            <a href="#servicios">Servicios</a>
+            <a href="#tecnologia">Tecnología</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contacto" class="btn" style="padding:0.4rem 1rem;font-size:0.9rem;">Cotizar</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-badge">⚡ Análisis en campo · Estado de México</div>
+            <h1>Auditoría Preventiva e Instrumentación Dinámica de Estructuras</h1>
+            <p>Monitoreamos la rigidez de tus losas, muros y maquinaria pesada mediante algoritmos avanzados de análisis de frecuencias. Detectamos daños y asentamientos invisibles antes de que se conviertan en riesgos de clausura.</p>
+            <a href="#servicios" class="btn">Ver Soluciones de Campo</a>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="92">0</span>
+                    <span class="stat-label">dB de rechazo de ruido</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="5" data-suffix=" min">0</span>
+                    <span class="stat-label">ciclos de buffer flush</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="3" data-prefix="+" data-suffix="k">0</span>
+                    <span class="stat-label">puntos evaluados</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="24" data-suffix="h">0</span>
+                    <span class="stat-label">monitoreo continuo</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pain-points">
+        <h2>¿Tu inmueble ha sufrido por sismos o asentamientos?</h2>
+        <div class="grid-3">
+            <div class="pain-card fade-in fade-in-delay-1">
+                <h3>Asentamientos Diferenciales</h3>
+                <p>¿Sientes inclinación al caminar en los pisos superiores? Los cimientos pueden estarse consolidando de forma asimétrica, fatigando las uniones de la estructura.</p>
+            </div>
+            <div class="pain-card fade-in fade-in-delay-2">
+                <h3>Daño Sísmico Acumulado</h3>
+                <p>Múltiples sismos menores generan microfisuras internas en el concreto que no son perceptibles a la vista, pero alteran drásticamente su rigidez elástica.</p>
+            </div>
+            <div class="pain-card fade-in fade-in-delay-3">
+                <h3>Vibración por Maquinaria</h3>
+                <p>El golpeteo constante en naves industriales puede inducir resonancia destructiva. Saber cómo absorbe y disipa energía tu losa es vital.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Zona de cobertura -->
+    <section class="coverage-section">
+        <h2>¿Atendemos tu zona?</h2>
+        <p class="coverage-subtitle">Operamos en el Valle de México. Encuentra tu municipio abajo.</p>
+        <div class="coverage-grid">
+            <div class="coverage-card fade-in fade-in-delay-1">
+                <h3><span class="icon">🏙️</span> Ciudad de México</h3>
+                <div class="coverage-tag-list">
+                    <span class="coverage-tag">Iztapalapa</span>
+                    <span class="coverage-tag">Coyoacán</span>
+                    <span class="coverage-tag">Gustavo A. Madero</span>
+                    <span class="coverage-tag">Álvaro Obregón</span>
+                    <span class="coverage-tag">Benito Juárez</span>
+                    <span class="coverage-tag">Cuauhtémoc</span>
+                    <span class="coverage-tag">Miguel Hidalgo</span>
+                    <span class="coverage-tag">Azcapotzalco</span>
+                    <span class="coverage-tag">Tlalpan</span>
+                    <span class="coverage-tag">Xochimilco</span>
+                    <span class="coverage-tag">Venustiano Carranza</span>
+                    <span class="coverage-tag">Tláhuac</span>
+                    <span class="coverage-tag">y más alcaldías</span>
+                </div>
+            </div>
+            <div class="coverage-card fade-in fade-in-delay-2">
+                <h3><span class="icon">🏘️</span> Estado de México</h3>
+                <div class="coverage-tag-list">
+                    <span class="coverage-tag">Ecatepec</span>
+                    <span class="coverage-tag">Naucalpan</span>
+                    <span class="coverage-tag">Tlalnepantla</span>
+                    <span class="coverage-tag">Nezahualcóyotl</span>
+                    <span class="coverage-tag">Chimalhuacán</span>
+                    <span class="coverage-tag">Atizapán</span>
+                    <span class="coverage-tag">Tultitlán</span>
+                    <span class="coverage-tag">Cuautitlán Izcalli</span>
+                    <span class="coverage-tag">Coacalco</span>
+                    <span class="coverage-tag">Huixquilucan</span>
+                    <span class="coverage-tag">La Paz</span>
+                    <span class="coverage-tag">Ixtapaluca</span>
+                    <span class="coverage-tag">y municipios cercanos</span>
+                </div>
+            </div>
+        </div>
+        <p class="coverage-note">¿Tu municipio no aparece? Escríbenos por WhatsApp — podemos cotizar desplazamiento a otros estados para proyectos industriales de mayor escala.</p>
+    </section>
+
+    <!-- Garantía política de no-resultado -->
+    <section class="guarantee-banner">
+        <h2>¿Qué pasa si no se detecta nada?</h2>
+        <p>Si el perito acude y la estructura no presenta anomalías detectables, igual pagas la visita — pero te vas con certeza técnica, no con una duda. El cobro cubre el desplazamiento, la calibración del equipo y el tiempo del perito en campo. Lo que nunca haremos es fabricar un problema donde no existe.</p>
+        <div class="guarantee-pills">
+            <span class="guarantee-pill">✓ Diagnóstico honesto aunque sea "todo está bien"</span>
+            <span class="guarantee-pill">✓ Sin cargos ocultos ni revisiones extra no pactadas</span>
+            <span class="guarantee-pill">✓ Si dudamos del resultado, repetimos la medición sin costo</span>
+        </div>
+    </section>
+
+    <!-- SERVICIOS: 3 cards -->
+    <section class="services" id="servicios">
+        <div class="services-container">
+            <h2>Esquemas de Control Técnico Preventivo</h2>
+            <div class="grid-3-services">
+
+                <!-- Card 1: Visita Corta $1,500 -->
+                <div class="service-card fade-in fade-in-delay-1" style="border-top-color: #f59e0b;">
+                    <div>
+                        <h3>Visita de Reconocimiento</h3>
+                        <p>Revisión express en sitio: inspección visual técnica y lectura dinámica básica de un elemento estructural sin dictamen formal.</p>
+                        <div class="price">$1,500
+                            <span>MXN / visita
+                                <!-- MEJORA NUEVA 5: Tooltip -->
+                                <span class="tooltip-wrap">
+                                    <span class="tooltip-icon">?</span>
+                                    <span class="tooltip-box">Incluye desplazamiento dentro del Valle de México. Fuera del EDOMEX cotizar por separado.</span>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="price-justification">
+                            <strong>¿Por qué $1,500?</strong> Este nivel cubre el costo de desplazamiento, calibración del equipo Kernel SDA en campo y 30 minutos de lectura. Es el punto de entrada ideal para propietarios que aún no saben si necesitan un análisis completo — recibes un criterio técnico honesto antes de comprometer mayor inversión.
+                        </div>
+                        <ul class="features-list">
+                            <li>Lectura espectral básica en 1 punto de la estructura</li>
+                            <li>Identificación visual de patrones de riesgo (fisuras, inclinación)</li>
+                            <li>Orientación verbal del perito sobre el estado general</li>
+                            <li>Recomendación de si se requiere auditoría completa o no</li>
+                            <li>Sin dictamen formal — ideal como primera consulta técnica</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/525647385519?text=Hola,%20me%20interesa%20la%20Visita%20de%20Reconocimiento%20de%201500" target="_blank" class="btn" style="background-color:#f59e0b;text-align:center;">Agendar Visita Express</a>
+                </div>
+
+                <!-- Card 2: Auditoría en Punto $3,500 — "Más popular" -->
+                <div class="service-card fade-in fade-in-delay-2">
+                    <div class="badge-popular">Más solicitado</div>
+                    <div>
+                        <h3>Auditoría Estructural en Punto</h3>
+                        <p>Evaluación rápida pericial en campo de la respuesta dinámica del elemento seleccionado.</p>
+                        <div class="price">$3,500 <span>MXN / por punto</span></div>
+                        <ul class="features-list">
+                            <li>Muestreo de espectro de vibración con Kernel SDA analítico</li>
+                            <li>Aislamiento de ruido ambiental con ventana Blackman-Harris de 92 dB</li>
+                            <li>Cálculo de Frecuencia Dominante, Curtosis y Factor de Cresta</li>
+                            <li>Entrega inmediata de Dictamen de Validez Interna en PDF</li>
+                            <li>Ideal para diagnósticos preventivos domésticos y comerciales</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/525647385519?text=Hola,%20me%20interesa%20una%20Auditoría%20en%20Punto" target="_blank" class="btn" style="text-align:center;">Agendar Inspección</a>
+                </div>
+
+                <!-- Card 3: Monitoreo Continuo $4,500 -->
+                <div class="service-card fade-in fade-in-delay-3" style="border-top-color:#3b82f6;">
+                    <div>
+                        <h3>Monitoreo Continuo (SDA Centinela)</h3>
+                        <p>Instalación de hardware dedicado para un registro ininterrumpido del comportamiento estructural.</p>
+                        <div class="price">$4,500 <span>MXN / iguala mensual*</span></div>
+                        <ul class="features-list">
+                            <li>Instalación de dispositivo centinela dedicado en la zona crítica</li>
+                            <li>Lazo de monitoreo continuo las 24 horas (Buffer Flushing cada 5 min)</li>
+                            <li>Análisis avanzado de espectro consolidado mediante Método de Welch</li>
+                            <li>Configuración de Alertas Remotas instantáneas al teléfono del usuario</li>
+                            <li>Reporte de tendencia de variaciones dinámicas mensuales</li>
+                            <li>*Requiere pago único por configuración inicial de $5,000</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/525647385519?text=Hola,%20me%20interesa%20el%20Monitoreo%20Continuo%20Centinela" target="_blank" class="btn" style="background-color:#3b82f6;text-align:center;">Solicitar Cotización Industrial</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Formas de pago -->
+    <section class="payment-section">
+        <h3>Formas de pago aceptadas</h3>
+        <div class="payment-methods">
+            <div class="payment-chip"><span class="chip-icon">💳</span> Transferencia SPEI</div>
+            <div class="payment-chip"><span class="chip-icon">💵</span> Efectivo en sitio</div>
+            <div class="payment-chip"><span class="chip-icon">🟦</span> Mercado Pago</div>
+            <div class="payment-chip"><span class="chip-icon">📲</span> CoDi / DiMo</div>
+            <div class="payment-chip"><span class="chip-icon">🏦</span> Depósito bancario</div>
+        </div>
+    </section>
+
+    <!-- MEJORA NUEVA 2: Tabla comparativa -->
+    <section class="compare-section">
+        <h2>¿Cuál servicio necesitas?</h2>
+        <p class="compare-subtitle">Elige según tu situación actual</p>
+        <div class="compare-table-wrap">
+            <table class="compare">
+                <thead>
+                    <tr>
+                        <th>Característica</th>
+                        <th>Visita $1,500</th>
+                        <th class="compare-col-highlight">Auditoría $3,500</th>
+                        <th>Centinela $4,500/mes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Lectura espectral en campo</td>
+                        <td><span class="chk">✓</span></td>
+                        <td class="compare-col-highlight"><span class="chk">✓</span></td>
+                        <td><span class="chk">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td>Dictamen pericial en PDF</td>
+                        <td><span class="nochk">—</span></td>
+                        <td class="compare-col-highlight"><span class="chk">✓</span></td>
+                        <td><span class="chk">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td>Análisis Curtosis + Factor de Cresta</td>
+                        <td><span class="nochk">—</span></td>
+                        <td class="compare-col-highlight"><span class="chk">✓</span></td>
+                        <td><span class="chk">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td>Registro continuo 24h</td>
+                        <td><span class="nochk">—</span></td>
+                        <td class="compare-col-highlight"><span class="nochk">—</span></td>
+                        <td><span class="chk">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td>Alertas remotas al teléfono</td>
+                        <td><span class="nochk">—</span></td>
+                        <td class="compare-col-highlight"><span class="nochk">—</span></td>
+                        <td><span class="chk">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td>Ideal para</td>
+                        <td>Primera consulta / duda inicial</td>
+                        <td class="compare-col-highlight">Diagnóstico preventivo formal</td>
+                        <td>Inmuebles industriales o en riesgo</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Tecnología -->
+    <section class="features-tech" id="tecnologia">
+        <h2>Rigor Científico Detrás del Ecosistema SDA</h2>
+        <div class="tech-steps-wrapper">
+            <div class="tech-step fade-in">
+                <div class="tech-number">1</div>
+                <div class="tech-info">
+                    <h4>Procesamiento de Señal Avanzado (Welch + Blackman-Harris)</h4>
+                    <p>Nuestros algoritmos aplican un enventanado de 4 términos que atenúa el ruido parásito del entorno por encima de los 92 dB, garantizando que escuchemos la verdadera frecuencia del material, limpia de interferencias externas.</p>
+                </div>
+            </div>
+            <div class="tech-step fade-in fade-in-delay-1">
+                <div class="tech-number">2</div>
+                <div class="tech-info">
+                    <h4>Monitoreo Estadístico de Impactos (Curtosis y Cresta)</h4>
+                    <p>No solo medimos si la estructura se mueve; vigilamos la forma de la onda. Un incremento súbito en la Curtosis Espectral es el aviso inequívoco de un golpe o fallo transitorio incipiente en la rigidez estructural.</p>
+                </div>
+            </div>
+            <div class="tech-step fade-in fade-in-delay-2">
+                <div class="tech-number">3</div>
+                <div class="tech-info">
+                    <h4>Diagnóstico Basado en Líneas de Calibración</h4>
+                    <p>Establecemos una huella digital dinámica única para tu propiedad. El sistema detecta desviaciones microscópicas en la masa efectiva y la flexibilidad elástica estructural respecto a la base de calibración.</p>
+                </div>
+            </div>
+            <div class="tech-step fade-in fade-in-delay-3">
+                <div class="tech-number">4</div>
+                <div class="tech-info">
+                    <h4>Reporte Pericial Automatizado (SDA Reportes)</h4>
+                    <p>Los datos capturados en campo se procesan automáticamente para generar un dictamen pericial en PDF con layout A4 calibrado, glosario técnico y firma del perito responsable, listo para presentarse ante cualquier autoridad.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios — sin el de nave industrial -->
+    <section class="testimonials">
+        <div class="testimonials-container">
+            <h2>Lo que dicen nuestros clientes</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in fade-in-delay-1">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Después del sismo de 2022 tenía dudas sobre mi edificio de 4 plantas. KhaosSDA detectó microfisuras en la losa del 2do nivel que visualmente eran imperceptibles. Hicimos el refuerzo a tiempo."</p>
+                    <div class="testimonial-author">Ing. Roberto Salinas</div>
+                    <div class="testimonial-role">Propietario · Edificio residencial, Ecatepec</div>
+                </div>
+                <div class="testimonial-card fade-in fade-in-delay-2">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"El dictamen pericial en PDF fue aceptado por el municipio sin observaciones. Profesional, claro y con respaldo técnico real. Lo recomiendo ampliamente."</p>
+                    <div class="testimonial-author">Arq. Diana Monroy</div>
+                    <div class="testimonial-role">Directora de obra · Conjunto habitacional, Naucalpan</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section" id="faq">
+        <h2>Preguntas Frecuentes</h2>
+        <div class="faq-item">
+            <button class="faq-question">¿Cuánto tiempo dura una auditoría en punto? <span class="faq-icon">+</span></button>
+            <div class="faq-answer">La captura en campo tarda entre 15 y 40 minutos por punto, dependiendo de la accesibilidad al elemento estructural y las condiciones de ruido ambiental. El dictamen PDF se entrega el mismo día.</div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">¿Tienen validez oficial los dictámenes que emiten? <span class="faq-icon">+</span></button>
+            <div class="faq-answer">Los dictámenes de KhaosSDA son documentos de control técnico preventivo de validez interna pericial. Para trámites oficiales ante autoridades municipales o estatales, se recomienda complementarlos con la firma de un DRO (Director Responsable de Obra) registrado ante el municipio correspondiente.</div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">¿Qué diferencia hay entre la Visita de Reconocimiento y la Auditoría en Punto? <span class="faq-icon">+</span></button>
+            <div class="faq-answer">La Visita de Reconocimiento ($1,500) es una orientación técnica express: el perito acude, evalúa visualmente y hace una lectura básica para decirte si el problema merece un análisis formal. La Auditoría en Punto ($3,500) incluye medición espectral completa, análisis de curtosis y factor de cresta, y entrega un dictamen formal en PDF.</div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">¿Atienden fuera del Estado de México? <span class="faq-icon">+</span></button>
+            <div class="faq-answer">Principalmente operamos en el Valle de México (CDMX, EDOMEX). Para proyectos industriales de mayor escala podemos cotizar desplazamientos a otros estados. Contáctenos vía WhatsApp para evaluar su caso.</div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="cta-final" id="contacto">
+        <h2>Protege tu Inversión y tu Seguridad</h2>
+        <p>¿Tienes dudas sobre una losa inclinada o una zona de maquinaria pesada? Obtén datos duros y toma el control.</p>
+        <a href="https://wa.me/525647385519?text=Hola,%20solicito%20asesoria%20para%20un%20analisis%20de%20vibracion" target="_blank" class="btn">Hablar con un Especialista por WhatsApp</a>
+        <p style="font-size:0.82rem;color:#64748b;margin-top:0.75rem;">⏱ Respondemos en menos de 2 horas en horario hábil (Lun–Vie 8–18 h)</p>
+        <!-- MEJORA NUEVA 3: Teléfono visible en CTA -->
+        <div class="cta-phone-block">
+            <span class="cta-phone-label">O llámanos directamente</span>
+            <a class="cta-phone-number" href="tel:+525647385519">56 4738 5519</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Ecosistema SDA Mobile Suite. Dictámenes de control y validez técnica interna pericial. Estado de México, México.</p>
+    </footer>
+
+    <!-- Botón volver arriba -->
+    <a id="back-to-top" href="#" aria-label="Volver arriba">&#8679;</a>
+
+    <!-- WhatsApp flotante con número real -->
+    <a class="whatsapp-float" href="https://wa.me/525647385519?text=Hola,%20solicito%20informacion%20sobre%20KhaosSDA" target="_blank" aria-label="Contactar por WhatsApp">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <!-- Badge de tiempo de respuesta junto al WA flotante -->
+    <div class="wa-response-badge">Respondemos en &lt;2 h en horario hábil</div>
+
+    <script>
+        // Hamburger
+        var hamburger = document.getElementById('hamburger');
+        var navLinks  = document.getElementById('nav-links');
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('open');
+            navLinks.classList.toggle('open');
+        });
+        navLinks.querySelectorAll('a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                hamburger.classList.remove('open');
+                navLinks.classList.remove('open');
+            });
+        });
+
+        // Header shadow + active nav + barra scroll
+        var header = document.getElementById('main-header');
+        var progressBar = document.getElementById('scroll-progress');
+        window.addEventListener('scroll', function() {
+            header.classList.toggle('scrolled', window.scrollY > 10);
+            // Barra de progreso
+            var scrollTop = window.scrollY;
+            var docH = document.documentElement.scrollHeight - window.innerHeight;
+            progressBar.style.width = (docH > 0 ? (scrollTop / docH * 100) : 0) + '%';
+            // Active nav
+            var sections = ['servicios','tecnologia','faq','contacto'];
+            var current = '';
+            sections.forEach(function(id) {
+                var el = document.getElementById(id);
+                if (el && el.getBoundingClientRect().top <= 80) current = id;
+            });
+            navLinks.querySelectorAll('a').forEach(function(a) {
+                a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+            });
+        });
+
+        // Contadores
+        function animateCounter(el) {
+            var target = parseInt(el.getAttribute('data-target'));
+            var prefix = el.getAttribute('data-prefix') || '';
+            var suffix = el.getAttribute('data-suffix') || '';
+            var step = target / (1500 / 16);
+            var current = 0;
+            var timer = setInterval(function() {
+                current += step;
+                if (current >= target) { current = target; clearInterval(timer); }
+                el.textContent = prefix + Math.floor(current) + suffix;
+            }, 16);
+        }
+        var countersDone = false;
+        var heroObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting && !countersDone) {
+                    countersDone = true;
+                    document.querySelectorAll('.stat-number').forEach(animateCounter);
+                }
+            });
+        }, { threshold: 0.5 });
+        heroObserver.observe(document.querySelector('.hero-stats'));
+
+        // Fade-in
+        var fadeObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) { entry.target.classList.add('visible'); fadeObserver.unobserve(entry.target); }
+            });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.fade-in').forEach(function(el) { fadeObserver.observe(el); });
+
+        // FAQ acordeón
+        document.querySelectorAll('.faq-question').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var item = btn.parentElement;
+                var isOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+                if (!isOpen) item.classList.add('open');
+            });
+        });
+
+        // Botón volver arriba
+        var backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', function() {
+            backToTop.classList.toggle('show', window.scrollY > 500);
+        });
+        backToTop.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Badge tiempo respuesta WA — mostrar al pasar sobre el botón flotante
+        var waFloat = document.querySelector('.whatsapp-float');
+        var waBadge = document.querySelector('.wa-response-badge');
+        if (waFloat && waBadge) {
+            waFloat.addEventListener('mouseenter', function() { waBadge.style.opacity = '1'; });
+            waFloat.addEventListener('mouseleave', function() { waBadge.style.opacity = '0'; });
+        }
+    </script>
+</body>
+</html>
